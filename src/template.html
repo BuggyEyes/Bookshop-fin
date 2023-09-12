@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link
+          rel="stylesheet"
+          href="https://fonts.googleapis.com/css?family=Montserrat"
+  />
+  <link
+          rel="stylesheet"
+          href="https://fonts.googleapis.com/css?family=Open+Sans"
+  />
+  <link rel="stylesheet" href="/src/styles/style.css" type="text/css" />
+  <script src="/src/index.js"></script>
+  <title>Document</title>
+</head>
+<body>
+<div class="wrapper">
+  <header class="header">
+    <nav class="header-content">
+      <div class="logo">Bookshop</div>
+      <ul class="header-navigation">
+        <li class="header-nav-item"><a href="#">books</a></li>
+        <li class="header-nav-item"><a href="#">audiobooks</a></li>
+        <li class="header-nav-item"><a href="#">Stationery & gifts</a></li>
+        <li class="header-nav-item"><a href="#">blog</a></li>
+        <li class="header-nav-img1">
+          <a href="#">
+            <img src="./pics/user.png" alt="user" />
+          </a>
+        </li>
+        <li class="header-nav-item">
+          <a href="#">
+            <img src="./pics/search.png" alt="search" />
+          </a>
+        </li>
+        <li class="header-nav-item">
+          <a id="cart" href="#">
+            <img src="./pics/shop bag.png" alt="shop-bag" />
+            <div id="cart">
+              <div id="circle"></div>
+            </div>
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </header>
+</div>
+
+<main>
+  <div id="slider" class="slider">
+    <input type="range" min="1" max="3" step="1" value="1" />
+    <img src="./pics/banner.png" alt="banner" class="active" />
+    <img src="./pics/banner 2.png" alt="banner 2" />
+    <img src="./pics/banner 3.png" alt="banner 3" />
+  </div>
+  <div class="change-book">
+    <a href="#">
+      <p>
+        Change old book on new <img src="./pics/arrow.png" alt="arrow" />
+      </p>
+    </a>
+  </div>
+  <div class="top-books">
+    <a href="#">
+      <p>top 100 books 2022 <img src="./pics/arrow.png" alt="arrow" /></p>
+    </a>
+  </div>
+  <div class="dots-container">
+    <div class="dot active" onclick="showSlide(0)"></div>
+    <div class="dot" onclick="showSlide(1)"></div>
+    <div class="dot" onclick="showSlide(2)"></div>
+  </div>
+  <div class="genre-list">
+    <ul class="categories">
+      <li class="list-point active" data-category="architecture">
+        Architecture
+      </li>
+      <li class="list-point" data-category="art">Art & Fashion</li>
+      <li class="list-point" data-category="biography">Biography</li>
+      <li class="list-point" data-category="business">Business</li>
+      <li class="list-point" data-category="crafts">Crafts & Hobbies</li>
+      <li class="list-point" data-category="drama">Drama</li>
+      <li class="list-point" data-category="fiction">Fiction</li>
+      <li class="list-point" data-category="food">Food & Drink</li>
+      <li class="list-point" data-category="health">Health & Wellbeing</li>
+      <li class="list-point" data-category="history">History & Politics</li>
+      <li class="list-point" data-category="humor">Humor</li>
+      <li class="list-point" data-category="poetry">Poetry</li>
+      <li class="list-point" data-category="psychology">Psychology</li>
+      <li class="list-point" data-category="science">Science</li>
+      <li class="list-point" data-category="technology">Technology</li>
+      <li class="list-point" data-category="travel">Travel & Maps</li>
+    </ul>
+    <div id="bookList"></div>
+  </div>
+  <div id="loadMoreBtn">
+    <button class="buy-button">Load more</button>
+  </div>
+</main>
+</body>
+</html>
