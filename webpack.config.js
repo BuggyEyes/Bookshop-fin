@@ -1,7 +1,10 @@
 const path = require('path')
 const webpack = require('webpack')
+// const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const CopyWebpackPlugin = require('copy-webpack-plugin')
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const TerserJSPlugin = require('terser-webpack-plugin');
 // const {CleanWebpackPlugin} = require('clean-webpack-plugin')
 module.exports = {
     mode: "development",
@@ -14,6 +17,13 @@ module.exports = {
         compress: true,
         hot: true,
         port: 8080,
+    },
+    optimization: {
+        minimize: true,
+        minimizer: [new TerserJSPlugin({}),
+            // new OptimizeCSSAssetsPlugin({}),
+            new MiniCssExtractPlugin({})
+        ],
     },
     entry: {
         main: path.resolve(__dirname, './src/index.js'),
@@ -29,7 +39,11 @@ module.exports = {
             filename: 'index.html', // название выходного файла
         }),
             // new CleanWebpackPlugin(),
-            new webpack.HotModuleReplacementPlugin(),
+            // new webpack.HotModuleReplacementPlugin(),
+            new MiniCssExtractPlugin(
+                {
+                    filename: "main.css", //
+                }),
             new CopyWebpackPlugin({
                 patterns: [{
                     from: path.resolve(__dirname, './src/pics'),
